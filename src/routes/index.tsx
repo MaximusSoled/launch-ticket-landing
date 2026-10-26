@@ -179,7 +179,7 @@ function Index() {
           <div className="mx-auto mt-10 max-w-2xl space-y-4 text-center text-muted-foreground">
             <p>Nenhuma dessas decisões é necessariamente errada.</p>
             <p className="font-display text-2xl text-foreground">Mas como saber qual delas realmente precisa ser tomada na sua clínica?</p>
-            <p>Antes de investir mais, mudar de estratégia ou buscar outro fornecedor, existe uma pergunta que merece atenção:</p>
+            <p>Antes de investir mais, mudar de estratégia ou buscar outra assessoria, existe uma pergunta que merece atenção:</p>
             <p className="rounded-xl border border-gold/40 bg-card p-6 text-lg font-semibold text-foreground">
               Você sabe exatamente em qual etapa sua clínica está perdendo oportunidades de converter contatos em pacientes?
             </p>
