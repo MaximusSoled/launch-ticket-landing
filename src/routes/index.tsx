@@ -233,8 +233,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Dobra 5b - cards animados no scroll */}
-      <SprintCards />
 
       {/* Dobra 6 - resultados (conteúdo pendente) */}
       <section className="px-5 py-12">
