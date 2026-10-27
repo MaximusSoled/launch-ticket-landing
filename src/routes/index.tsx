@@ -38,14 +38,14 @@ function Price({ center = false }: { center?: boolean }) {
   return (
     <p className={`text-muted-foreground ${center ? "text-center" : ""}`}>
       de <span className="line-through">R$ 97</span> por{" "}
-      <span className="text-gold-gradient text-2xl font-extrabold">R$ 47,90</span>
+      <span className="text-accent text-2xl font-extrabold">R$ 47,90</span>
     </p>
   );
 }
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-gold-gradient text-center font-display text-3xl font-semibold leading-tight md:text-5xl">
+    <h2 className="text-foreground text-center font-display text-3xl font-semibold leading-tight md:text-5xl">
       {children}
     </h2>
   );
@@ -126,7 +126,7 @@ function Index() {
       <section className="relative px-5 pb-20 pt-14 md:pt-24">
         <div className="glow-ember pointer-events-none absolute -right-40 -top-20 h-[600px] w-[800px]" />
         <div className="relative mx-auto max-w-6xl">
-          <p className="font-display text-2xl text-gold md:text-3xl">SPRINT EXECUÇÃO</p>
+          <p className="font-display text-2xl text-muted-foreground md:text-3xl">SPRINT EXECUÇÃO</p>
           <h1 className="mt-6 max-w-3xl font-display text-3xl font-semibold leading-tight md:text-5xl">
             Sua clínica tem potencial para crescer. Você só precisa ter clareza sobre o que precisa fazer
           </h1>
@@ -150,7 +150,7 @@ function Index() {
       </section>
 
       {/* Dobra 2 - clientes (mockup) */}
-      <section className="border-y border-border bg-card/50 py-12">
+      <section className="surface-light border-y border-border py-12">
         <p className="px-5 text-center text-muted-foreground">Nosso clientes que utilizam ou utilizaram a mesma estrtégia</p>
         <div className="mt-8 overflow-hidden">
           <div className="animate-marquee flex w-max gap-6">
@@ -175,7 +175,7 @@ function Index() {
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {alternatives.map(([t, d]) => (
               <div key={t} className="rounded-xl border border-border bg-card p-6">
-                <p className="font-display text-xl text-gold">{t}</p>
+                <p className="font-display text-xl text-foreground">{t}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{d}</p>
               </div>
             ))}
@@ -200,11 +200,11 @@ function Index() {
             <p>Ter mais contatos pode gerar novas oportunidades. Atrair pacientes mais qualificados também pode ajudar.</p>
             <p>Mas existe uma questão importante: o que acontece entre o momento em que o paciente demonstra interesse e a hora em que decide agendar um procedimento?</p>
             <p>O marketing atrai a atenção. O atendimento inicia a conversa. O comercial conduz o relacionamento. O acompanhamento ajuda a manter a oportunidade avançando.</p>
-            <p className="font-semibold text-gold">Essas etapas precisam trabalhar na mesma direção.</p>
+            <p className="font-semibold text-foreground">Essas etapas precisam trabalhar na mesma direção.</p>
             <p>Quando cada área atua sem um planejamento integrado, fica mais difícil identificar prioridades, acompanhar o que realmente funciona e decidir onde concentrar esforços.</p>
             <p>Você pode investir em anúncios sem ter clareza sobre a capacidade de atendimento. Pode gerar contatos sem um processo comercial bem definido. Ou pode cobrar resultados sem indicadores que ajudem a entender o que precisa ser ajustado.</p>
             <p>E, sem enxergar a operação como um todo, qualquer mudança corre o risco de atacar apenas uma parte do problema.</p>
-            <p className="font-semibold text-foreground">É por isso que <span className="text-gold">marketing e comercial precisam fazer parte da mesma estratégia.</span></p>
+            <p className="font-semibold text-foreground">É por isso que <span className="underline decoration-primary decoration-2 underline-offset-4">marketing e comercial precisam fazer parte da mesma estratégia.</span></p>
             <p>Não se trata apenas de atrair pacientes. Trata-se de planejar como a clínica vai trabalhar as oportunidades, conduzir o atendimento e acompanhar a operação para buscar melhores resultados.</p>
           </div>
         </div>
@@ -221,8 +221,8 @@ function Index() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {steps.map(([t, d]) => (
-              <div key={t} className="rounded-xl border border-border bg-card p-6">
-                <p className="font-display text-xl text-gold">{t}</p>
+              <div key={t} className="rounded-xl border border-border border-t-primary bg-card p-6">
+                <p className="font-display text-xl text-foreground">{t}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{d}</p>
               </div>
             ))}
@@ -230,7 +230,7 @@ function Index() {
           <div className="mx-auto mt-16 max-w-2xl text-center">
             <h3 className="font-display text-2xl font-semibold md:text-4xl">E como colocar tudo isso em prática na sua clínica?</h3>
             <p className="mt-5 text-muted-foreground">No Sprint clínica capilar, vamos trabalhar juntos para estruturar uma estratégia de marketing e comercial, do planejamento à execução, considerando os desafios e os objetivos de crescimento da sua clínica.</p>
-            <p className="mt-5 font-semibold text-gold">Duas horas para organizar as ideias, estruturar prioridades e definir os próximos passos da sua operação.</p>
+            <p className="mt-5 font-semibold text-foreground">Duas horas para organizar as ideias, estruturar prioridades e definir os próximos passos da sua operação.</p>
           </div>
         </div>
       </section>
@@ -246,13 +246,13 @@ function Index() {
       {/* Dobra 7 - cronograma */}
       <section className="px-5 py-20">
         <div className="mx-auto max-w-3xl">
-          <p className="text-center text-sm font-bold uppercase tracking-widest text-gold">19 de Novembro | 19h15 até às 21h15</p>
+          <p className="text-center text-sm font-bold uppercase tracking-widest text-muted-foreground">19 de Novembro | 19h15 até às 21h15</p>
           <div className="mt-4"><H2>Cronograma</H2></div>
           <p className="mt-4 text-center text-muted-foreground">O Sprint seguirá esse cronograma:</p>
           <div className="mt-10 grid gap-3 sm:grid-cols-4">
             {schedule.map(([h, l]) => (
               <div key={h} className="rounded-xl border border-border bg-card p-5 text-center">
-                <p className="font-display text-2xl text-gold">{h}</p>
+                <p className="font-display text-2xl text-foreground">{h}</p>
                 <p className="mt-1 text-sm">{l}</p>
               </div>
             ))}
@@ -266,8 +266,8 @@ function Index() {
       {/* Dobra 8 - oferta */}
       <section id="oferta" className="relative px-5 py-20">
         <div className="glow-ember pointer-events-none absolute left-1/2 top-1/2 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="relative mx-auto max-w-md rounded-2xl border border-gold/50 bg-card p-8 text-center shadow-2xl">
-          <p className="font-display text-4xl text-gold-gradient font-semibold">SPRINT</p>
+        <div className="relative mx-auto max-w-md rounded-2xl border border-accent/50 bg-card p-8 text-center shadow-2xl">
+          <p className="font-display text-4xl text-foreground font-semibold">SPRINT</p>
           <p className="mt-2 text-sm text-muted-foreground">19 de novembro | Online e ao vivo</p>
           <p className="mt-1 text-sm font-semibold">Marketing e comercial para clínicas</p>
           <div className="my-6 h-px bg-border" />
@@ -280,15 +280,15 @@ function Index() {
           <div className="my-6 h-px bg-border" />
           <p className="text-sm text-muted-foreground">Seu ingresso por apenas:</p>
           <p className="mt-2 text-sm text-muted-foreground">de <span className="line-through">R$ 97</span> por</p>
-          <p className="text-gold-gradient font-display text-5xl font-bold">R$ 47,90</p>
+          <p className="text-accent font-display text-5xl font-bold">R$ 47,90</p>
           <Cta className="mt-6 w-full" />
         </div>
       </section>
 
       {/* Dobra 9 - garantia */}
       <section className="px-5 py-16">
-        <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center">
-          <h3 className="font-display text-2xl font-semibold text-gold md:text-3xl">Sua satisfação ou seu dinheiro de volta.</h3>
+        <div className="surface-light mx-auto max-w-2xl rounded-2xl border border-border p-8 text-center">
+          <h3 className="font-display text-2xl font-semibold text-foreground md:text-3xl">Sua satisfação ou seu dinheiro de volta.</h3>
           <p className="mt-4 text-muted-foreground">Participe do Sprint ao vivo. Se não gostar, solicite o reembolso em até 48 horas.</p>
         </div>
       </section>
