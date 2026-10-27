@@ -5,13 +5,13 @@ import { CHECKOUT_URL } from "@/config";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sprint Execução — Marketing e comercial para clínicas" },
+      { title: "Workshop Sprint — Marketing e comercial para clínicas" },
       {
         name: "description",
         content:
           "Em um Sprint de 2h, vamos estruturar o marketing e comercial da sua clínica, do planejamento ao faturamento previsível. 19 de novembro, online e ao vivo.",
       },
-      { property: "og:title", content: "Sprint Execução — Marketing e comercial para clínicas" },
+      { property: "og:title", content: "Workshop Sprint — Marketing e comercial para clínicas" },
       {
         property: "og:description",
         content: "Sprint de 2h, online e ao vivo, em 19 de novembro. De R$ 97 por R$ 47,90.",
@@ -72,19 +72,19 @@ const schedule = [
 ];
 
 const faq: [string, string[]][] = [
-  ["1. Para quem é o Sprint AZA?", ["Para médicos, donos e gestores de clínicas que desejam estruturar o marketing e o comercial de forma integrada e organizar os próximos passos para o crescimento da operação."]],
+  ["1. Para quem é o Workshop Sprint?", ["Para médicos, donos e gestores de clínicas que desejam estruturar o marketing e o comercial de forma integrada e organizar os próximos passos para o crescimento da operação."]],
   ["2. O que vou receber ao participar?", ["Você participará de um encontro estratégico de 2 horas, ao vivo, com foco na estruturação do marketing e comercial da sua clínica, do planejamento à execução."]],
-  ["3. Preciso ter uma clínica grande ou uma equipe comercial?", ["Não necessariamente. O Sprint é voltado a médicos, donos e gestores de clínicas. As estratégias poderão ser adaptadas à realidade e à estrutura de cada operação."]],
-  ["4. O Sprint AZA ficará gravado?", [
+  ["3. Preciso ter uma clínica grande ou uma equipe comercial?", ["Não necessariamente. O Workshop Sprint é voltado a médicos, donos e gestores de clínicas. As estratégias poderão ser adaptadas à realidade e à estrutura de cada operação."]],
+  ["4. O Workshop Sprint ficará gravado?", [
     "Não. O ingresso de R$ 47,90 dá acesso apenas à participação ao vivo, sem incluir a gravação do evento.",
     "Se você quiser assistir ao conteúdo posteriormente, poderá adquirir a gravação separadamente, em formato de aulas, durante a compra do seu ingresso, pelo checkout.",
     "Assim, você poderá escolher a opção que faz mais sentido para você: participar ao vivo ou adquirir também o acesso à gravação, caso esteja disponível.",
     "Se precisar de ajuda, entre em contato com nosso time de suporte.",
   ]],
-  ["5. E se eu participar e não gostar?", ["Se você assistir ao Sprint ao vivo e não gostar da experiência, poderá solicitar o reembolso em até 48 horas, conforme as condições da garantia."]],
-  ["6. Quando e onde será o Sprint AZA?", ["O encontro será realizado online e ao vivo na quinta-feira, 19 de novembro de 2026, às 19h30, no horário de Brasília."]],
+  ["5. E se eu participar e não gostar?", ["Se você assistir ao Workshop Sprint ao vivo e não gostar da experiência, poderá solicitar o reembolso em até 48 horas, conforme as condições da garantia."]],
+  ["6. Quando e onde será o Workshop Sprint?", ["O encontro será realizado online e ao vivo na quinta-feira, 19 de novembro de 2026, às 19h30, no horário de Brasília."]],
   ["7. Quanto custa participar?", ["O ingresso custa R$ 47,90. As formas de pagamento disponíveis serão apresentadas no checkout."]],
-  ["8. O Sprint garante que minha clínica vai aumentar o faturamento?", ["Não há garantia de resultados financeiros específicos. O objetivo do Sprint é ajudar você a estruturar uma estratégia de marketing e comercial. Os resultados dependem da realidade da clínica, da execução das ações e de outros fatores do negócio."]],
+  ["8. O Workshop Sprint garante que minha clínica vai aumentar o faturamento?", ["Não há garantia de resultados financeiros específicos. O objetivo do Workshop Sprint é ajudar você a estruturar uma estratégia de marketing e comercial. Os resultados dependem da realidade da clínica, da execução das ações e de outros fatores do negócio."]],
 ];
 
 function Faq() {
@@ -124,7 +124,7 @@ function Index() {
       <section className="relative px-5 pb-20 pt-14 md:pt-24">
         <div className="glow-ember pointer-events-none absolute -right-40 -top-20 h-[600px] w-[800px]" />
         <div className="relative mx-auto max-w-6xl">
-          <p className="font-display text-2xl text-gold md:text-3xl">SPRINT EXECUÇÃO</p>
+          <p className="font-display text-2xl text-gold md:text-3xl">WORKSHOP SPRINT</p>
           <h1 className="mt-6 max-w-3xl font-display text-3xl font-semibold leading-tight md:text-5xl">
             Sua clínica tem potencial para crescer. Você só precisa ter clareza sobre o que precisa fazer
           </h1>
@@ -227,7 +227,7 @@ function Index() {
           </div>
           <div className="mx-auto mt-16 max-w-2xl text-center">
             <h3 className="font-display text-2xl font-semibold md:text-4xl">E como colocar tudo isso em prática na sua clínica?</h3>
-            <p className="mt-5 text-muted-foreground">No Sprint clínica capilar, vamos trabalhar juntos para estruturar uma estratégia de marketing e comercial, do planejamento à execução, considerando os desafios e os objetivos de crescimento da sua clínica.</p>
+            <p className="mt-5 text-muted-foreground">No Workshop Sprint, vamos trabalhar juntos para estruturar uma estratégia de marketing e comercial, do planejamento à execução, considerando os desafios e os objetivos de crescimento da sua clínica.</p>
             <p className="mt-5 font-semibold text-gold">Duas horas para organizar as ideias, estruturar prioridades e definir os próximos passos da sua operação.</p>
           </div>
         </div>
@@ -246,7 +246,7 @@ function Index() {
         <div className="mx-auto max-w-3xl">
           <p className="text-center text-sm font-bold uppercase tracking-widest text-gold">19 de Novembro | 19h15 até às 21h15</p>
           <div className="mt-4"><H2>Cronograma</H2></div>
-          <p className="mt-4 text-center text-muted-foreground">O Sprint seguirá esse cronograma:</p>
+          <p className="mt-4 text-center text-muted-foreground">O Workshop Sprint seguirá esse cronograma:</p>
           <div className="mt-10 grid gap-3 sm:grid-cols-4">
             {schedule.map(([h, l]) => (
               <div key={h} className="rounded-xl border border-border bg-card p-5 text-center">
@@ -265,7 +265,7 @@ function Index() {
       <section id="oferta" className="relative px-5 py-20">
         <div className="glow-ember pointer-events-none absolute left-1/2 top-1/2 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/2" />
         <div className="relative mx-auto max-w-md rounded-2xl border border-gold/50 bg-card p-8 text-center shadow-2xl">
-          <p className="font-display text-4xl text-gold-gradient font-semibold">SPRINT</p>
+          <p className="font-display text-4xl text-gold-gradient font-semibold">WORKSHOP SPRINT</p>
           <p className="mt-2 text-sm text-muted-foreground">19 de novembro | Online e ao vivo</p>
           <p className="mt-1 text-sm font-semibold">Marketing e comercial para clínicas</p>
           <div className="my-6 h-px bg-border" />
@@ -287,7 +287,7 @@ function Index() {
       <section className="px-5 py-16">
         <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center">
           <h3 className="font-display text-2xl font-semibold text-gold md:text-3xl">Sua satisfação ou seu dinheiro de volta.</h3>
-          <p className="mt-4 text-muted-foreground">Participe do Sprint ao vivo. Se não gostar, solicite o reembolso em até 48 horas.</p>
+          <p className="mt-4 text-muted-foreground">Participe do Workshop Sprint ao vivo. Se não gostar, solicite o reembolso em até 48 horas.</p>
         </div>
       </section>
 
@@ -302,7 +302,7 @@ function Index() {
         <p>© 2026 AZA ACELERACAO MEDICA LTDA. Todos os direitos reservados.</p>
         <p className="mt-1">CNPJ: 59.342.676/0001-0</p>
         <p className="mt-3"><a href="#" className="hover:text-gold">Política de Privacidade</a> | <a href="#" className="hover:text-gold">Termos de Uso</a></p>
-        <p className="mx-auto mt-6 max-w-2xl">Este evento tem caráter educacional e estratégico. A participação no Sprint não garante resultados financeiros específicos, que dependem de fatores como a realidade de cada clínica e a execução das estratégias propostas.</p>
+        <p className="mx-auto mt-6 max-w-2xl">Este evento tem caráter educacional e estratégico. A participação no Workshop Sprint não garante resultados financeiros específicos, que dependem de fatores como a realidade de cada clínica e a execução das estratégias propostas.</p>
       </footer>
     </main>
   );
