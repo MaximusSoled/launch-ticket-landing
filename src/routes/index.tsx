@@ -12,6 +12,8 @@ export const Route = createFileRoute("/")({
           "Em um Sprint de 2h, vamos estruturar o marketing e comercial da sua clínica, do planejamento ao faturamento previsível. 19 de novembro, online e ao vivo.",
       },
       { property: "og:title", content: "Sprint Execução — Marketing e comercial para clínicas" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:description",
         content: "Sprint de 2h, online e ao vivo, em 19 de novembro. De R$ 97 por R$ 47,90.",
