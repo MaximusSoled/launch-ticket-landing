@@ -103,8 +103,8 @@
 @keyframes shine-breathe { from, to { scale: 1; } 50% { scale: 1.2; } }
 
 @utility btn-shiny {
-  --shine-accent: oklch(0.62 0.19 45);
-  --shine-soft: oklch(0.9 0.08 90);
+  --shine-accent: oklch(0.65 0.2 45);
+  --shine-soft: oklch(0.78 0.16 55);
   isolation: isolate;
   position: relative;
   overflow: hidden;
@@ -112,17 +112,18 @@
   color: var(--primary-foreground);
   background:
     var(--gradient-gold) padding-box,
-    conic-gradient(from calc(var(--shine-angle) - var(--shine-offset)), transparent, var(--shine-accent) var(--shine-percent), var(--shine-color) calc(var(--shine-percent) * 2), var(--shine-accent) calc(var(--shine-percent) * 3), transparent calc(var(--shine-percent) * 4)) border-box;
+    conic-gradient(from calc(var(--shine-angle) - var(--shine-offset)), oklch(0.25 0.02 60), var(--shine-accent) var(--shine-percent), var(--shine-color) calc(var(--shine-percent) * 2), var(--shine-accent) calc(var(--shine-percent) * 3), oklch(0.25 0.02 60) calc(var(--shine-percent) * 4)) border-box;
   box-shadow: 0 10px 30px -10px oklch(0.8 0.11 80 / 0.6);
   animation: shine-angle 3s linear infinite;
   transition: --shine-offset 0.8s cubic-bezier(0.25,1,0.5,1), --shine-percent 0.8s cubic-bezier(0.25,1,0.5,1), --shine-color 0.8s cubic-bezier(0.25,1,0.5,1);
-  &::after {
-    content: ""; pointer-events: none; position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: -1;
-    width: 100%; aspect-ratio: 1;
-    background: linear-gradient(-50deg, transparent, oklch(1 0 0 / 0.5), transparent);
-    mask-image: radial-gradient(circle at bottom, transparent 40%, black);
-    opacity: 0.6;
-    animation: shine-rotate 7.5s linear infinite;
+  &::before {
+    content: ""; pointer-events: none; position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(circle at 2px 2px, oklch(1 0 0) 0.5px, transparent 0);
+    background-size: 4px 4px;
+    mask-image: conic-gradient(from calc(var(--shine-angle) + 45deg), black, transparent 10% 90%, black);
+    border-radius: inherit;
+    opacity: 0.4;
+    animation: shine-angle 3s linear infinite;
   }
   & > span { position: relative; z-index: 1; }
   & > span::before {
@@ -133,9 +134,9 @@
     animation: shine-breathe 4.5s linear infinite;
   }
   &:hover, &:focus-visible { --shine-percent: 20%; --shine-offset: 95deg; --shine-color: var(--shine-soft); }
-  &:hover > span::before, &:focus-visible > span::before { opacity: 0.5; }
+  &:hover > span::before, &:focus-visible > span::before { opacity: 0.4; }
   &:active { translate: 0 1px; }
   @media (prefers-reduced-motion: reduce) {
-    animation: none; &::after, & > span::before { animation: none; }
+    animation: none; &::before, & > span::before { animation: none; }
   }
 }
