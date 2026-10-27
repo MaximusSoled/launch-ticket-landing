@@ -25,9 +25,9 @@ function Cta({ className = "" }: { className?: string }) {
   return (
     <a
       href={CHECKOUT_URL}
-      className={`btn-shiny inline-flex items-center justify-center rounded-lg px-8 py-4 text-sm font-extrabold uppercase tracking-wider ${className}`}
+      className={`btn-gold inline-flex items-center justify-center rounded-lg px-8 py-4 text-sm font-extrabold uppercase tracking-wider ${className}`}
     >
-      <span>Garantir meu ingresso</span>
+      Garantir meu ingresso
     </a>
   );
 }
