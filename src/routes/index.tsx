@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { CHECKOUT_URL } from "@/config";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,6 +64,33 @@ const steps = [
   ["4. Crie uma direção para tomar decisões melhores", "Em vez de agir apenas diante dos problemas que aparecem, tenha um planejamento que ajude a identificar prioridades e orientar os próximos ajustes."],
 ];
 
+const sprintCards = [
+  [
+    "1",
+    "Posicionamento estratégico",
+    "Como sua clínica é percebida pelo mercado?",
+    "Vamos trabalhar a forma como sua clínica se apresenta e comunica seu valor para atrair o perfil de paciente que deseja atender.",
+  ],
+  [
+    "2",
+    "Planejamento de marketing",
+    "Quais ações devem orientar a atração de pacientes?",
+    "Vamos organizar a direção do marketing para que as ações estejam conectadas aos objetivos e às prioridades da clínica.",
+  ],
+  [
+    "3",
+    "Estratégia comercial",
+    "Como conduzir os contatos até a decisão do paciente?",
+    "Vamos estruturar o processo comercial, considerando atendimento, acompanhamento e conversão das oportunidades.",
+  ],
+  [
+    "4",
+    "Integração e execução",
+    "Como transformar tudo isso em uma estratégia aplicável?",
+    "Vamos conectar posicionamento, marketing e comercial em uma direção estratégica, com prioridades e próximos passos para a clínica.",
+  ],
+];
+
 const schedule = [
   ["19h15", "Início"],
   ["20h15", "Intervalo"],
@@ -108,6 +136,91 @@ function Faq() {
         </div>
       ))}
     </div>
+  );
+}
+
+function useScrollReveal() {
+  const observer = useRef<IntersectionObserver | null>(null);
+
+  return useCallback((section: HTMLDivElement | null) => {
+    observer.current?.disconnect();
+    observer.current = null;
+    if (!section) return;
+
+    const items = Array.from(section.querySelectorAll<HTMLElement>("[data-reveal]"));
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.setAttribute("data-shown", ""));
+      return;
+    }
+
+    section.setAttribute("data-reveal-ready", "");
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach((entry, i) => {
+            const el = entry.target as HTMLElement;
+            el.style.transitionDelay = `${i * 110}ms`;
+            el.setAttribute("data-shown", "");
+            io.unobserve(el);
+          });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    items.forEach((el) => io.observe(el));
+    observer.current = io;
+  }, []);
+}
+
+function SprintCards() {
+  const revealRef = useScrollReveal();
+
+  return (
+    <section className="px-5 py-20">
+      <div className="mx-auto max-w-5xl">
+        <H2>O que vamos estruturar juntos durante o Sprint AZA?</H2>
+        <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed text-muted-foreground">
+          Em 2 horas, vamos conectar os elementos essenciais para estruturar o marketing e comercial
+          da sua clínica, do planejamento à execução.
+        </p>
+
+        <div ref={revealRef} className="relative mt-14">
+          <span aria-hidden className="axis-line absolute inset-y-0 left-4 w-px md:left-1/2" />
+          {sprintCards.map(([num, title, question, text], i) => {
+            const left = i % 2 === 0;
+            return (
+              <div
+                key={num}
+                data-reveal
+                className={cn(
+                  "relative pl-12 md:w-1/2 md:pl-0",
+                  left ? "md:pr-12 md:text-right" : "md:ml-auto md:pl-12",
+                  i > 0 && "mt-8 md:mt-12"
+                )}
+              >
+                <span
+                  aria-hidden
+                  className={cn(
+                    "absolute left-4 top-6 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-gold/50 bg-background font-display text-sm text-gold md:top-8",
+                    left ? "md:left-full" : "md:left-0"
+                  )}
+                >
+                  {num}
+                </span>
+                <div className="rounded-xl border border-border bg-card p-6">
+                  <p className="font-display text-xl text-gold">{title}</p>
+                  <p className="mt-2 font-semibold text-foreground">{question}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -230,6 +343,9 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Dobra 5b - cards animados no scroll */}
+      <SprintCards />
 
       {/* Dobra 6 - resultados (conteúdo pendente) */}
       <section className="px-5 py-12">
