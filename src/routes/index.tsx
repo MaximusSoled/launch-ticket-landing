@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 import { CHECKOUT_URL } from "@/config";
-import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,32 +63,6 @@ const steps = [
   ["4. Crie uma direção para tomar decisões melhores", "Em vez de agir apenas diante dos problemas que aparecem, tenha um planejamento que ajude a identificar prioridades e orientar os próximos ajustes."],
 ];
 
-const sprintCards = [
-  [
-    "1",
-    "Posicionamento estratégico",
-    "Como sua clínica é percebida pelo mercado?",
-    "Vamos trabalhar a forma como sua clínica se apresenta e comunica seu valor para atrair o perfil de paciente que deseja atender.",
-  ],
-  [
-    "2",
-    "Planejamento de marketing",
-    "Quais ações devem orientar a atração de pacientes?",
-    "Vamos organizar a direção do marketing para que as ações estejam conectadas aos objetivos e às prioridades da clínica.",
-  ],
-  [
-    "3",
-    "Estratégia comercial",
-    "Como conduzir os contatos até a decisão do paciente?",
-    "Vamos estruturar o processo comercial, considerando atendimento, acompanhamento e conversão das oportunidades.",
-  ],
-  [
-    "4",
-    "Integração e execução",
-    "Como transformar tudo isso em uma estratégia aplicável?",
-    "Vamos conectar posicionamento, marketing e comercial em uma direção estratégica, com prioridades e próximos passos para a clínica.",
-  ],
-];
 
 const schedule = [
   ["19h15", "Início"],
