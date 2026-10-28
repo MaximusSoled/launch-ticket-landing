@@ -95,11 +95,11 @@ function Faq() {
         <div key={q}>
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="flex w-full items-center justify-between gap-4 py-5 text-left font-semibold"
+            className="flex min-h-[52px] w-full items-center justify-between gap-4 py-5 text-left font-medium text-foreground"
             aria-expanded={open === i}
           >
             {q}
-            <span className={`text-gold transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
+            <svg viewBox="0 0 24 24" className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open === i ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 9 6 6 6-6" /></svg>
           </button>
           {open === i && (
             <div className="space-y-3 pb-5 text-sm leading-relaxed text-muted-foreground">
@@ -116,7 +116,7 @@ function Faq() {
 function Index() {
   return (
     <main className="relative overflow-hidden">
-      <div className="bg-primary py-2 text-center text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground">
+      <div className="border-b border-border py-2 text-center text-[11px] font-medium uppercase tracking-[0.18em] text-[#C5A059] md:text-xs">
         19 de novembro | Online e ao vivo
       </div>
 
@@ -141,7 +141,7 @@ function Index() {
               "Estruture o marketing e o comercial da sua clínica em conjunto",
               "Defina os próximos passos para melhorar a conversão de contatos em pacientes",
             ].map((t) => (
-              <li key={t} className="flex gap-2"><span className="text-gold">✓</span>{t}</li>
+              <li key={t} className="flex gap-2"><span className="text-success">✓</span>{t}</li>
             ))}
           </ul>
         </div>
@@ -172,7 +172,7 @@ function Index() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {alternatives.map(([t, d]) => (
-              <div key={t} className="rounded-xl border border-border bg-card p-6">
+              <div key={t} className="rounded-2xl border border-border bg-card p-6">
                 <p className="font-display text-xl text-gold">{t}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{d}</p>
               </div>
@@ -219,7 +219,7 @@ function Index() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {steps.map(([t, d]) => (
-              <div key={t} className="rounded-xl border border-border bg-card p-6">
+              <div key={t} className="rounded-2xl border border-border bg-card p-6">
                 <p className="font-display text-xl text-gold">{t}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{d}</p>
               </div>
@@ -249,7 +249,7 @@ function Index() {
           <p className="mt-4 text-center text-muted-foreground">O Workshop Sprint seguirá esse cronograma:</p>
           <div className="mt-10 grid gap-3 sm:grid-cols-4">
             {schedule.map(([h, l]) => (
-              <div key={h} className="rounded-xl border border-border bg-card p-5 text-center">
+              <div key={h} className="rounded-2xl border border-border bg-card p-5 text-center">
                 <p className="font-display text-2xl text-gold">{h}</p>
                 <p className="mt-1 text-sm">{l}</p>
               </div>
@@ -272,7 +272,7 @@ function Index() {
           <p className="text-left text-sm font-semibold">Você terá:</p>
           <ul className="mt-3 space-y-2 text-left text-sm text-muted-foreground">
             {["2 horas de estruturação estratégica", "Planejamento de marketing e comercial", "Direção do planejamento à execução"].map((t) => (
-              <li key={t} className="flex gap-2"><span className="text-gold">✓</span>{t}</li>
+              <li key={t} className="flex gap-2"><span className="text-success">✓</span>{t}</li>
             ))}
           </ul>
           <div className="my-6 h-px bg-border" />
